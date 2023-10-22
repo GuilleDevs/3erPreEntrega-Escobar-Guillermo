@@ -61,7 +61,21 @@ function cargarProductosCarrito() {
 
 }
 
+mostrarLoader()
+function mostrarLoader() {
+    Swal.fire({
+      title: "Cargando",
+      html: "Estamos buscando productos...",
+      timer: 1000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
+  }
+
 cargarProductosCarrito();
+
 
 function actualizarBotonesEliminar() {
     botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
